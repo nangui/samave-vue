@@ -6,9 +6,9 @@
 
 ## SamaneMVC Vuejs Ready to uses
 
-[Image of home page](capture_samane_vue_1.png)  
+[](capture_samane_vue_1.png)  
 
-[Image of home page](capture_samane_vue_1.png)  
+[](capture_samane_vue_1.png)  
 
 In this depot I put a version of samanemvc with viewjs ready to use, to do this, I used [laravel-mix](https://laravel-mix.com/).
 
