@@ -31,6 +31,7 @@ class View{
         private function chargerDonnees($page, $data = array()){
             $page_directory = 'src/view/' . $page . '.html';
             $data['url_base'] = base_url();
+            $data['url_public'] = public_url();
             $this->tpl->assign($data);
                 
             if(file_exists($page_directory))

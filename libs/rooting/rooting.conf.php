@@ -37,4 +37,9 @@
         //echo $url;
         return $url;
     }
+
+    function public_url()
+    {
+        return base_url() . 'public/dist/'; 
+    }
 ?>

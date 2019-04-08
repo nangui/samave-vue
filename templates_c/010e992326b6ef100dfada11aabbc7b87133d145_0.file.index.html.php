@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-04-07 23:00:13
+/* Smarty version 3.1.30, created on 2019-04-08 02:37:04
   from "C:\xampp\htdocs\samanemvc-master\src\view\welcome\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5caa64dd88f8e3_16741768',
+  'unifunc' => 'content_5caa97b0be1e79_33787184',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '010e992326b6ef100dfada11aabbc7b87133d145' => 
     array (
       0 => 'C:\\xampp\\htdocs\\samanemvc-master\\src\\view\\welcome\\index.html',
-      1 => 1554670576,
+      1 => 1554683822,
       2 => 'file',
     ),
   ),
@@ -20,66 +20,66 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5caa64dd88f8e3_16741768 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5caa97b0be1e79_33787184 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>page d'accueil</title>
-		<!-- l'appel de <?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
- vous permet de recupérer le chemin de votre site web  -->
-		<link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
-public/css/bootstrap.min.css"/>
-		<link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
-public/css/samane.css"/>
-		<!-- integration de javascript dans le moteur de rendu de vue Smarty -->
-		
-			<?php echo '<script'; ?>
- language=javascript>
-			 function load_design() {
-			   document.getElementById("design_js").style.color = "#40007d";
-			 }
-
-			<?php echo '</script'; ?>
->
-		
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Samane MVC | Home Page</title>
+		<!-- $url_public variable reference /public/dist/, and this is used for load the assets files like: image, js and css -->
+		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['url_public']->value;?>
+css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['url_public']->value;?>
+css/app.css" />
 	</head>
-	<body onload="load_design()">
-		<div class="nav navbar navbar-default navbar-fixed-top">
-			<ul class="nav navbar-nav">
-				<!-- l'appel de <?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
- vous permet de recupérer le chemin de votre site web  -->
-				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
-">Accueil</a></li>
-				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
-Test/index">Menu page test</a></li>
-				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
-Test/getID/1">Menu page test 2</a></li>
-				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
-Test/liste">Menu page test liste</a></li>
-			</ul>
-		</div>
-		<img src="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
-public/image/logo.jpg" class="resize" />
-		
-		<div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:160px;">
-			<div class="panel panel-info">
-				<div class="panel-heading">BIENVENUE A VOTRE MODELE MVC</div>
-				<div class="panel-body">
-					<div class="alert alert-success" style="font-size:18px; text-align:justify;">
-						Merci, l'équipe samanemvc vous remercie :) : 
-						je vous ai préparé un CRUD qui marche, il suffit tout simplement d'importer
-						la base de données qui se trouve dans le dossier src/view puis test (src/view/test);
-						cette base s'appelle samane_test.sql et elle comporte une seule table nommée test.
-						ça vous sera très utile j'espère.
-						<br/>Et surtout noubliez pas de configurer votre base de données : ou? Dans le dossier config
-						puis éditez le fichier database.php. Mettez à on l'etat de la base! Bon code!!!!  :)
-					</div>
-					<div id="design_js">MODELE DEVELOPPE PAR Ngor SECK ! <h1>Version 1.5</h1></div>
+	<body>
+		<nav class="navbar navbar-expand-md navbar-dark bg-primary shadow">
+  			<a class="navbar-brand" href="#">
+			    <img src="<?php echo $_smarty_tpl->tpl_vars['url_public']->value;?>
+image/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="Samane MVC logo" />
+			    Samane MVC
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    			<span class="navbar-toggler-icon"></span>
+  			</button>	
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			    <ul class="navbar-nav mr-auto">
+			      <li class="nav-item active">
+			        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+">Accueil <span class="sr-only">(current)</span></a>
+			      </li>
+			      <li class="nav-item active">
+			        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+Test/index">Menu page test</a>
+			      </li>
+			      <li class="nav-item active">
+			        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+Test/getID/1">Menu page test 2</a>
+			      </li>
+			      <li class="nav-item active">
+			        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+Test/liste">Menu page test liste</a>
+			      </li>
+			    </ul>
+			</div>
+		</nav>
+
+		<main id="app">
+			
+			<div class="container" style="height: 80vh;">
+				<div class="row flex-column justify-content-center align-items-center h-100">
+					<welcome name="Ngor Seck" />
 				</div>
 			</div>
-		</div>
+
+		</main>
+
+		<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['url_public']->value;?>
+js/app.js"><?php echo '</script'; ?>
+>
 	</body>
 </html>
 <?php }
