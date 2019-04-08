@@ -6,9 +6,9 @@
 
 ## SamaneMVC Vuejs Ready to uses
 
-[](capture_samane_vue_1.png)  
+<img src="capture_samane_vue_1.png" alt="Image home page"/>  
 
-[](capture_samane_vue_1.png)  
+<img src="capture_samane_vue_2.png" alt="Image âge list"/>  
 
 In this depot I put a version of samanemvc with viewjs ready to use, to do this, I used [laravel-mix](https://laravel-mix.com/).
 
