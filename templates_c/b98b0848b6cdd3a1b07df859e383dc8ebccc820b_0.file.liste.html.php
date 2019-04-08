@@ -3,34 +3,32 @@
   from "/var/www/html/Samane_workspace/samanemvc/src/view/test/liste.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, [
   'version' => '3.1.30',
   'unifunc' => 'content_5c85c05dadd3a1_19622769',
   'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    'b98b0848b6cdd3a1b07df859e383dc8ebccc820b' => 
-    array (
+  'file_dependency' => [
+    'b98b0848b6cdd3a1b07df859e383dc8ebccc820b' => [
       0 => '/var/www/html/Samane_workspace/samanemvc/src/view/test/liste.html',
       1 => 1552256318,
       2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_5c85c05dadd3a1_19622769 (Smarty_Internal_Template $_smarty_tpl) {
-?>
+    ],
+  ],
+  'includes' => [
+  ],
+], false)) {
+    function content_5c85c05dadd3a1_19622769(Smarty_Internal_Template $_smarty_tpl)
+    {
+        ?>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>page liste</title>
-		<!-- l'appel de <?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+		<!-- l'appel de <?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
  vous permet de recupérer le chemin de votre site web  -->
-		<link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+		<link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 public/css/bootstrap.min.css"/>
-		<link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+		<link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 public/css/samane.css"/>
 		<style>
 			h1{ 
@@ -39,19 +37,19 @@ public/css/samane.css"/>
 		</style>
 	</head>
 	<body>
-		<img src="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+		<img src="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 public/image/logo.jpg" class="resize" />
 		<div class="nav navbar navbar-default navbar-fixed-top">
 			<ul class="nav navbar-nav">
-				<!-- l'appel de <?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+				<!-- l'appel de <?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
  vous permet de recupérer le chemin de votre site web  -->
-				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 ">Accueil</a></li>
-				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 Test/index">Menu page test</a></li>
-				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 Test/getID/1">Menu page test 2</a></li>
-				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 Test/liste">Menu page test liste</a></li>
 			</ul>
 		</div>
@@ -68,8 +66,10 @@ Test/liste">Menu page test liste</a></li>
 						<br/>Et surtout noubliez pas de configurer votre base de données : ou? Dans le dossier config
 						puis éditez le fichier database.php. Mettez à on l'etat de la base puis cliquez sur le menu <b>Menu page test liste</b>! Bon code!!!!  :)
 					</div>
-					<?php if (isset($_smarty_tpl->tpl_vars['tests']->value)) {?>
-						<?php if ($_smarty_tpl->tpl_vars['tests']->value != null) {?>
+					<?php if (isset($_smarty_tpl->tpl_vars['tests']->value)) {
+            ?>
+						<?php if ($_smarty_tpl->tpl_vars['tests']->value != null) {
+                ?>
 							<table class="table table-bordered table-stripped">
 								<tr>
 									<th>Identifiant</th>
@@ -80,41 +80,45 @@ Test/liste">Menu page test liste</a></li>
 								</tr>
 								<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['tests']->value, 'test');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['test']->value) {
-?>
+                if ($_from !== null) {
+                    foreach ($_from as $_smarty_tpl->tpl_vars['test']->value) {
+                        ?>
 									<tr>
-										<td><?php echo $_smarty_tpl->tpl_vars['test']->value['ID'];?>
+										<td><?php echo $_smarty_tpl->tpl_vars['test']->value['ID']; ?>
 </td>
-										<td><?php echo $_smarty_tpl->tpl_vars['test']->value['valeur1'];?>
+										<td><?php echo $_smarty_tpl->tpl_vars['test']->value['valeur1']; ?>
 </td>
-										<td><?php echo $_smarty_tpl->tpl_vars['test']->value['valeur2'];?>
+										<td><?php echo $_smarty_tpl->tpl_vars['test']->value['valeur2']; ?>
 </td>
-										<td><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
-Test/delete/<?php echo $_smarty_tpl->tpl_vars['test']->value['ID'];?>
+										<td><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
+Test/delete/<?php echo $_smarty_tpl->tpl_vars['test']->value['ID']; ?>
 ">Supprimer</a></td>
-										<td><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
-Test/edit/<?php echo $_smarty_tpl->tpl_vars['test']->value['ID'];?>
+										<td><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
+Test/edit/<?php echo $_smarty_tpl->tpl_vars['test']->value['ID']; ?>
 ">Editer</a></td>
 									</tr>
 								<?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
-?>
+                    }
+                }
+                $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl); ?>
 
 							</table>
-						<?php } else { ?>
+						<?php
+            } else {
+                ?>
 							Liste vide
-						<?php }?>
-					<?php }?>
+						<?php
+            } ?>
+					<?php
+        } ?>
 				</div>
-				<a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+				<a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 Test/add">Ajout d'un test</a>
 			</div>
 		</div>
 		
 	</body>
 </html>
-<?php }
+<?php
+    }
 }

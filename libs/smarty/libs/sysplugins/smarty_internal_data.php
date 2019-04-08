@@ -1,18 +1,14 @@
 <?php
 /**
  * Smarty Internal Plugin Data
- * This file contains the basic classes and methods for template and variable creation
+ * This file contains the basic classes and methods for template and variable creation.
  *
- * @package    Smarty
- * @subpackage Template
  * @author     Uwe Tews
  */
 
 /**
- * Base class with template and variable methods
+ * Base class with template and variable methods.
  *
- * @package    Smarty
- * @subpackage Template
  *
  * @property int $scope
  * The following methods will be dynamically loaded by the extension handler when they are called.
@@ -29,42 +25,42 @@
 class Smarty_Internal_Data
 {
     /**
-     * This object type (Smarty = 1, template = 2, data = 4)
+     * This object type (Smarty = 1, template = 2, data = 4).
      *
      * @var int
      */
     public $_objType = 4;
 
     /**
-     * name of class used for templates
+     * name of class used for templates.
      *
      * @var string
      */
     public $template_class = 'Smarty_Internal_Template';
 
     /**
-     * template variables
+     * template variables.
      *
      * @var Smarty_Variable[]
      */
-    public $tpl_vars = array();
+    public $tpl_vars = [];
 
     /**
-     * parent template (if any)
+     * parent template (if any).
      *
      * @var Smarty|Smarty_Internal_Template|Smarty_Internal_Data
      */
     public $parent = null;
 
     /**
-     * configuration settings
+     * configuration settings.
      *
      * @var string[]
      */
-    public $config_vars = array();
+    public $config_vars = [];
 
     /**
-     * extension handler
+     * extension handler.
      *
      * @var Smarty_Internal_Extension_Handler
      */
@@ -82,11 +78,11 @@ class Smarty_Internal_Data
     }
 
     /**
-     * assigns a Smarty variable
+     * assigns a Smarty variable.
      *
-     * @param  array|string $tpl_var the template variable name(s)
-     * @param  mixed        $value   the value to assign
-     * @param  boolean      $nocache if true any output of this variable will be not cached
+     * @param array|string $tpl_var the template variable name(s)
+     * @param mixed        $value   the value to assign
+     * @param bool         $nocache if true any output of this variable will be not cached
      *
      * @return Smarty_Internal_Data current Smarty_Internal_Data (or Smarty or Smarty_Internal_Template) instance for
      *                              chaining
@@ -100,27 +96,29 @@ class Smarty_Internal_Data
         } else {
             if ($tpl_var != '') {
                 if ($this->_objType == 2) {
-                    /** @var  Smarty_Internal_Template $this */
+                    /* @var  Smarty_Internal_Template $this */
                     $this->_assignInScope($tpl_var, $value, $nocache);
                 } else {
-                    $this->tpl_vars[ $tpl_var ] = new Smarty_Variable($value, $nocache);
+                    $this->tpl_vars[$tpl_var] = new Smarty_Variable($value, $nocache);
                 }
             }
         }
+
         return $this;
     }
 
     /**
-     * appends values to template variables
+     * appends values to template variables.
      *
      * @api  Smarty::append()
+     *
      * @link http://www.smarty.net/docs/en/api.append.tpl
      *
-     * @param  array|string $tpl_var                                           the template variable name(s)
-     * @param  mixed        $value                                             the value to append
-     * @param  bool         $merge                                             flag if array elements shall be merged
-     * @param  bool         $nocache                                           if true any output of this variable will
-     *                                                                         be not cached
+     * @param array|string $tpl_var the template variable name(s)
+     * @param mixed        $value   the value to append
+     * @param bool         $merge   flag if array elements shall be merged
+     * @param bool         $nocache if true any output of this variable will
+     *                              be not cached
      *
      * @return \Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty
      */
@@ -130,11 +128,11 @@ class Smarty_Internal_Data
     }
 
     /**
-     * assigns a global Smarty variable
+     * assigns a global Smarty variable.
      *
-     * @param  string  $varName the global variable name
-     * @param  mixed   $value   the value to assign
-     * @param  boolean $nocache if true any output of this variable will be not cached
+     * @param string $varName the global variable name
+     * @param mixed  $value   the value to assign
+     * @param bool   $nocache if true any output of this variable will be not cached
      *
      * @return \Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty
      */
@@ -144,11 +142,11 @@ class Smarty_Internal_Data
     }
 
     /**
-     * appends values to template variables by reference
+     * appends values to template variables by reference.
      *
-     * @param  string  $tpl_var the template variable name
-     * @param  mixed   &$value  the referenced value to append
-     * @param  boolean $merge   flag if array elements shall be merged
+     * @param string $tpl_var the template variable name
+     * @param mixed  &$value  the referenced value to append
+     * @param bool   $merge   flag if array elements shall be merged
      *
      * @return \Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty
      */
@@ -158,11 +156,11 @@ class Smarty_Internal_Data
     }
 
     /**
-     * assigns values to template variables by reference
+     * assigns values to template variables by reference.
      *
-     * @param string   $tpl_var the template variable name
-     * @param          $value
-     * @param  boolean $nocache if true any output of this variable will be not cached
+     * @param string $tpl_var the template variable name
+     * @param        $value
+     * @param bool   $nocache if true any output of this variable will be not cached
      *
      * @return \Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty
      */
@@ -172,45 +170,47 @@ class Smarty_Internal_Data
     }
 
     /**
-     * Returns a single or all template variables
+     * Returns a single or all template variables.
      *
      * @api  Smarty::getTemplateVars()
+     *
      * @link http://www.smarty.net/docs/en/api.get.template.vars.tpl
      *
-     * @param  string                                                 $varName       variable name or null
+     * @param string                                                  $varName       variable name or null
      * @param \Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty $_ptr          optional pointer to data object
-     * @param  bool                                                   $searchParents include parent templates?
+     * @param bool                                                    $searchParents include parent templates?
      *
      * @return mixed variable value or or array of variables
      */
-    public function getTemplateVars($varName = null, Smarty_Internal_Data $_ptr = null, $searchParents = true)
+    public function getTemplateVars($varName = null, self $_ptr = null, $searchParents = true)
     {
         return $this->ext->getTemplateVars->getTemplateVars($this, $varName, $_ptr, $searchParents);
     }
 
     /**
-     * gets the object of a Smarty variable
+     * gets the object of a Smarty variable.
      *
-     * @param  string               $variable      the name of the Smarty variable
-     * @param  Smarty_Internal_Data $_ptr          optional pointer to data object
-     * @param  boolean              $searchParents search also in parent data
-     * @param bool                  $error_enable
+     * @param string               $variable      the name of the Smarty variable
+     * @param Smarty_Internal_Data $_ptr          optional pointer to data object
+     * @param bool                 $searchParents search also in parent data
+     * @param bool                 $error_enable
      *
      * @return Smarty_Variable|Smarty_Undefined_Variable the object of the variable
+     *
      * @deprecated since 3.1.28 please use Smarty_Internal_Data::getTemplateVars() instead.
      */
-    public function getVariable($variable = null, Smarty_Internal_Data $_ptr = null, $searchParents = true,
+    public function getVariable($variable = null, self $_ptr = null, $searchParents = true,
                                 $error_enable = true)
     {
         return $this->ext->getTemplateVars->_getVariable($this, $variable, $_ptr, $searchParents, $error_enable);
     }
 
     /**
-     * Follow the parent chain an merge template and config variables
+     * Follow the parent chain an merge template and config variables.
      *
      * @param \Smarty_Internal_Data|null $data
      */
-    public function _mergeVars(Smarty_Internal_Data $data = null)
+    public function _mergeVars(self $data = null)
     {
         if (isset($data)) {
             if (!empty($this->tpl_vars)) {
@@ -228,13 +228,14 @@ class Smarty_Internal_Data
     }
 
     /**
-     * Handle unknown class methods
+     * Handle unknown class methods.
      *
      * @param string $name unknown method-name
      * @param array  $args argument array
      *
-     * @return mixed
      * @throws SmartyException
+     *
+     * @return mixed
      */
     public function __call($name, $args)
     {

@@ -1,35 +1,34 @@
 <?php
 
 /**
- * Smarty Method ClearCompiledTemplate
+ * Smarty Method ClearCompiledTemplate.
  *
  * Smarty::clearCompiledTemplate() method
  *
- * @package    Smarty
- * @subpackage PluginsInternal
  * @author     Uwe Tews
  */
 class Smarty_Internal_Method_ClearCompiledTemplate
 {
     /**
-     * Valid for Smarty object
+     * Valid for Smarty object.
      *
      * @var int
      */
     public $objMap = 1;
 
     /**
-     * Delete compiled template file
+     * Delete compiled template file.
      *
      * @api  Smarty::clearCompiledTemplate()
+     *
      * @link http://www.smarty.net/docs/en/api.clear.compiled.template.tpl
      *
-     * @param \Smarty  $smarty
-     * @param  string  $resource_name template name
-     * @param  string  $compile_id    compile id
-     * @param  integer $exp_time      expiration time
+     * @param \Smarty $smarty
+     * @param string  $resource_name template name
+     * @param string  $compile_id    compile id
+     * @param int     $exp_time      expiration time
      *
-     * @return integer number of template files deleted
+     * @return int number of template files deleted
      */
     public function clearCompiledTemplate(Smarty $smarty, $resource_name = null, $compile_id = null, $exp_time = null)
     {
@@ -59,18 +58,18 @@ class Smarty_Internal_Method_ClearCompiledTemplate
         }
         $_dir = $_compile_dir;
         if ($smarty->use_sub_dirs && isset($_compile_id)) {
-            $_dir .= $_compile_id . $_dir_sep;
+            $_dir .= $_compile_id.$_dir_sep;
         }
         if (isset($_compile_id)) {
-            $_compile_id_part = $_compile_dir . $_compile_id . $_dir_sep;
+            $_compile_id_part = $_compile_dir.$_compile_id.$_dir_sep;
             $_compile_id_part_length = strlen($_compile_id_part);
         }
         $_count = 0;
+
         try {
             $_compileDirs = new RecursiveDirectoryIterator($_dir);
             // NOTE: UnexpectedValueException thrown for PHP >= 5.3
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             return 0;
         }
         $_compile = new RecursiveIteratorIterator($_compileDirs, RecursiveIteratorIterator::CHILD_FIRST);
@@ -88,14 +87,14 @@ class Smarty_Internal_Method_ClearCompiledTemplate
                 }
             } else {
                 $unlink = false;
-                if ((!isset($_compile_id) || (isset($_filepath[ $_compile_id_part_length ]) && $a =
+                if ((!isset($_compile_id) || (isset($_filepath[$_compile_id_part_length]) && $a =
                                 !strncmp($_filepath, $_compile_id_part, $_compile_id_part_length))) &&
-                    (!isset($resource_name) || (isset($_filepath[ $_resource_part_1_length ]) &&
+                    (!isset($resource_name) || (isset($_filepath[$_resource_part_1_length]) &&
                                                 substr_compare($_filepath, $_resource_part_1,
-                                                               - $_resource_part_1_length, $_resource_part_1_length) ==
-                                                0) || (isset($_filepath[ $_resource_part_2_length ]) &&
+                                                               -$_resource_part_1_length, $_resource_part_1_length) ==
+                                                0) || (isset($_filepath[$_resource_part_2_length]) &&
                                                        substr_compare($_filepath, $_resource_part_2,
-                                                                      - $_resource_part_2_length,
+                                                                      -$_resource_part_2_length,
                                                                       $_resource_part_2_length) == 0))
                 ) {
                     if (isset($exp_time)) {
@@ -108,13 +107,14 @@ class Smarty_Internal_Method_ClearCompiledTemplate
                 }
 
                 if ($unlink && @unlink($_filepath)) {
-                    $_count ++;
-                    if (function_exists('opcache_invalidate') && strlen(ini_get("opcache.restrict_api")) < 1) {
+                    $_count++;
+                    if (function_exists('opcache_invalidate') && strlen(ini_get('opcache.restrict_api')) < 1) {
                         opcache_invalidate($_filepath, true);
                     }
                 }
             }
         }
+
         return $_count;
     }
 }

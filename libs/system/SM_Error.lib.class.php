@@ -9,11 +9,12 @@
     VOUS ETES LIBRE DE TOUTE UTILISATION.
   ===================================================*/
 
-class SM_Error{
-
-    public function __construct(){
-        
+class SM_Error
+{
+    public function __construct()
+    {
     }
+
     public function messageError($message)
     {
         $msg = '<html>
@@ -30,8 +31,7 @@ class SM_Error{
                         .'</div>
                     </body>
                 </html>';
-                
+
         die($msg);
     }
 }
-?>

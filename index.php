@@ -9,8 +9,7 @@
     VOUS ETES LIBRE DE TOUTE UTILISATION.
   ===================================================*/
 
-	
-	require_once 'libs/autoload/Autoloader.class.php';
+    require_once 'libs/autoload/Autoloader.class.php';
   use libs\system\Bootstrap;
+
   $bootstrap = new Bootstrap();
-?>

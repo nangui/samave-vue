@@ -3,25 +3,23 @@
   from "C:\xampp\htdocs\samanemvc-master\src\view\test\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, [
   'version' => '3.1.30',
   'unifunc' => 'content_5caa994678a656_44353513',
   'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    'b4153ffb319db2a1982d046482897dd292d4ffcc' => 
-    array (
+  'file_dependency' => [
+    'b4153ffb319db2a1982d046482897dd292d4ffcc' => [
       0 => 'C:\\xampp\\htdocs\\samanemvc-master\\src\\view\\test\\index.html',
       1 => 1554684225,
       2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_5caa994678a656_44353513 (Smarty_Internal_Template $_smarty_tpl) {
-?>
+    ],
+  ],
+  'includes' => [
+  ],
+], false)) {
+    function content_5caa994678a656_44353513(Smarty_Internal_Template $_smarty_tpl)
+    {
+        ?>
 <!doctype html>
 <html lang="en">
 	<head>
@@ -29,15 +27,15 @@ function content_5caa994678a656_44353513 (Smarty_Internal_Template $_smarty_tpl)
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Samane MVC | Home Page</title>
 		<!-- $url_public variable reference /public/dist/, and this is used for load the assets files like: image, js and css -->
-		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['url_public']->value;?>
+		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['url_public']->value; ?>
 css/bootstrap.min.css"/>
-		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['url_public']->value;?>
+		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['url_public']->value; ?>
 css/app.css" />
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-md navbar-dark bg-primary shadow">
   			<a class="navbar-brand" href="#">
-			    <img src="<?php echo $_smarty_tpl->tpl_vars['url_public']->value;?>
+			    <img src="<?php echo $_smarty_tpl->tpl_vars['url_public']->value; ?>
 image/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="Samane MVC logo" />
 			    Samane MVC
 			</a>
@@ -47,19 +45,19 @@ image/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="Sam
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			    <ul class="navbar-nav mr-auto">
 			      <li class="nav-item active">
-			        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+			        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 ">Accueil <span class="sr-only">(current)</span></a>
 			      </li>
 			      <li class="nav-item active">
-			        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+			        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 Test/index">Menu page test</a>
 			      </li>
 			      <li class="nav-item active">
-			        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+			        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 Test/getID/1">Menu page test 2</a>
 			      </li>
 			      <li class="nav-item active">
-			        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+			        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 Test/liste">Menu page test liste</a>
 			      </li>
 			    </ul>
@@ -88,5 +86,6 @@ Test/liste">Menu page test liste</a>
 	</body>
 </html>
 		
-<?php }
+<?php
+    }
 }

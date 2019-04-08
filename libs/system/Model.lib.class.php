@@ -8,17 +8,18 @@
     CE MODELE.
     VOUS ETES LIBRE DE TOUTE UTILISATION.
   ===================================================*/
-namespace libs\system;
-class Model{
-        protected $db;
-        public function __construct(){
-            if(connexion_params()['etat'] == 'on')
-            {
-                require_once "PHP_DB_Connection.lib.class.php";
-                $this->db = getConnexion();
-            }
-        }
 
-        
+namespace libs\system;
+
+class Model
+{
+    protected $db;
+
+    public function __construct()
+    {
+        if (connexion_params()['etat'] == 'on') {
+            require_once 'PHP_DB_Connection.lib.class.php';
+            $this->db = getConnexion();
+        }
     }
-?>
+}

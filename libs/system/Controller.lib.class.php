@@ -8,13 +8,15 @@
     CE MODELE.
     VOUS ETES LIBRE DE TOUTE UTILISATION.
   ===================================================*/
-namespace libs\system;
-use libs\system\View;
 
-class Controller{
-        protected $view;
-        public function __construct(){
-            $this->view = new View();
-        }
+namespace libs\system;
+
+class Controller
+{
+    protected $view;
+
+    public function __construct()
+    {
+        $this->view = new View();
     }
-?>
+}

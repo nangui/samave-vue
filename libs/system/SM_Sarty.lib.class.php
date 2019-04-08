@@ -1,5 +1,6 @@
 <?php
-function getSmarty(){
+
+function getSmarty()
+{
     return new Smarty();
 }
-?>
