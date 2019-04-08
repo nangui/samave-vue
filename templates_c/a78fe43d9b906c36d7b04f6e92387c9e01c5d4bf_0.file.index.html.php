@@ -3,34 +3,32 @@
   from "/var/www/html/Samane_workspace/samanemvc/src/view/test/index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, [
   'version' => '3.1.30',
   'unifunc' => 'content_5c85c05f539107_66796276',
   'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    'a78fe43d9b906c36d7b04f6e92387c9e01c5d4bf' => 
-    array (
+  'file_dependency' => [
+    'a78fe43d9b906c36d7b04f6e92387c9e01c5d4bf' => [
       0 => '/var/www/html/Samane_workspace/samanemvc/src/view/test/index.html',
       1 => 1552256298,
       2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_5c85c05f539107_66796276 (Smarty_Internal_Template $_smarty_tpl) {
-?>
+    ],
+  ],
+  'includes' => [
+  ],
+], false)) {
+    function content_5c85c05f539107_66796276(Smarty_Internal_Template $_smarty_tpl)
+    {
+        ?>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>page d'accueil</title>
-		<!-- l'appel de <?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+		<!-- l'appel de <?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
  vous permet de recupérer le chemin de votre site web  -->
-		<link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+		<link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 public/css/bootstrap.min.css"/>
-		<link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+		<link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 public/css/samane.css"/>
 		<style>
 			h1{ 
@@ -39,19 +37,19 @@ public/css/samane.css"/>
 		</style>
 	</head>
 	<body>
-		<img src="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+		<img src="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 public/image/logo.jpg" class="resize" />
 		<div class="nav navbar navbar-default navbar-fixed-top">
 			<ul class="nav navbar-nav">
-				<!-- l'appel de <?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+				<!-- l'appel de <?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
  vous permet de recupérer le chemin de votre site web  -->
-				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 ">Accueil</a></li>
-				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 Test/index">Menu page test</a></li>
-				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 Test/getID/1">Menu page test 2</a></li>
-				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value;?>
+				<li><a href="<?php echo $_smarty_tpl->tpl_vars['url_base']->value; ?>
 Test/liste">Menu page test liste</a></li>
 			</ul>
 		</div>
@@ -78,5 +76,6 @@ Test/liste">Menu page test liste</a></li>
 	</body>
 </html>
 		
-<?php }
+<?php
+    }
 }

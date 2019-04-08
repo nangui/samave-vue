@@ -8,9 +8,9 @@
     CE DERNIER (GIT).
     VOUS ETES LIBRE DE TOUTE UTILISATION.
   ===================================================*/
-    function welcome_params(){
-        return array(
-                    'welcome_controller' => 'Welcome'
-                    );
+    function welcome_params()
+    {
+        return [
+                    'welcome_controller' => 'Welcome',
+                    ];
     }
-?>
