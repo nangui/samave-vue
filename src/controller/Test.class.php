@@ -27,19 +27,19 @@
             return $this->view->load('test/index');
         }
 
-        public function getID($id)
+        public function getID($ident)
         {
-            $data['ID'] = $id;
+            $data['ID'] = $ident;
 
             return $this->view->load('test/get_id', $data);
         }
 
-        public function get($id)
+        public function get($ident)
         {
             //Instanciation du model
             $tdb = new TestDB();
 
-            $data['test'] = $tdb->getTest($id);
+            $data['test'] = $tdb->getTest($ident);
 
             return $this->view->load('test/get', $data);
         }
@@ -59,8 +59,8 @@
             //Instanciation du model
             $tdb = new TestDB();
             //Récupération des données qui viennent du formulaire view/test/add.html (à créer)
-            if (isset($_POST['valider'])) {//'valider' est le name du champs submit du formulaire add.html
-                extract($_POST);
+            if (isset(filter_input(INPUT_POST, 'valider'))) {//'valider' est le name du champs submit du formulaire add.html
+                extract(filter_input_array(INPUT_POST));
                 $data['ok'] = 0;
                 if (!empty($valeur1) && !empty($valeur2)) {
                     $testObject = new TestEntity();
@@ -81,7 +81,7 @@
         {
             //Instanciation du model
             $tdb = new TestDB();
-            if (isset($_POST['modifier'])) {
+            if (isset(filter_input(INPUT_POST, 'modifier'))) {
                 extract($_POST);
                 if (!empty($id) && !empty($valeur1) && !empty($valeur2)) {
                     $testObject = new TestEntity();
@@ -95,23 +95,23 @@
             return $this->liste(); //appel de la methode liste du controller
         }
 
-        public function delete($id)
+        public function delete($ident)
         {
             //Instanciation du model
             $tdb = new TestDB();
             //Supression
-            $tdb->deleteTest($id);
+            $tdb->deleteTest($ident);
             //Retour vers la liste
             return $this->liste();
         }
 
-        public function edit($id)
+        public function edit($ident)
         {
 
             //Instanciation du model
             $tdb = new TestDB();
             //Supression
-            $data['test'] = $tdb->getTest($id);
+            $data['test'] = $tdb->getTest($ident);
             //chargement de la vue edit.html
             return $this->view->load('test/edit', $data);
         }

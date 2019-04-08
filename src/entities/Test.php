@@ -22,9 +22,9 @@ class Test
         return $this->id;
     }
 
-    public function setId($id)
+    public function setId($ident)
     {
-        $this->id = $id;
+        $this->id = $ident;
     }
 
     public function getValeur1()
