@@ -14,7 +14,7 @@
         },
         data() {
             return {
-                msg: ''
+                msg: ""
             }
         },
         mounted () {
@@ -23,7 +23,7 @@
         methods: {
             greetings: function () {
                 this.msg += `Hi, My name is ${this.name} and welcome to your first vue component`;
-            }
+            },
         }
     }
 </script>

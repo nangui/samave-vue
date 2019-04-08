@@ -1,13 +1,13 @@
-import 'jquery';
-import 'popper.js';
-import 'bootstrap';
-import Vue from 'vue';
+import "jquery";
+import "popper.js";
+import"bootstrap";
+import Vue from "vue";
 
-import Welcome from './components/Welcome.vue';
+import Welcome from "./components/Welcome.vue";
 
 new Vue({
-    el: '#app',
+    el: "#app",
     components: {
-    	Welcome,
+    	Welcome
     },
 });
