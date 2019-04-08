@@ -17,15 +17,15 @@
                 msg: ""
             }
         },
-        mounted () {
+        mounted() {
             this.greetings();
         },
         methods: {
-            greetings: function () {
+            greetings() {
                 this.msg += `Hi, My name is ${this.name} and welcome to your first vue component`;
             },
         }
-    }
+    };
 </script>
 
 <style>

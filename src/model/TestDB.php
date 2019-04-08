@@ -24,11 +24,11 @@ use libs\system\Model;
             parent::__construct();
         }
 
-        public function getTest($ID)
+        public function getTest($identity)
         {
             $sql = 'SELECT *
                      FROM test
-                     WHERE test.ID = '.$ID;
+                     WHERE test.ID = '.$identity;
             if ($this->db != null) {
                 return $this->db->query($sql)->fetch();
             } else {
@@ -49,9 +49,9 @@ use libs\system\Model;
             }
         }
 
-        public function deleteTest($id)
+        public function deleteTest($identity)
         {
-            $sql = "DELETE FROM test WHERE ID = $id";
+            $sql = "DELETE FROM test WHERE ID = $identity";
 
             if ($this->db != null) {
                 return $this->db->exec($sql);

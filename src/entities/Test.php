@@ -13,18 +13,18 @@ namespace src\entities;
 
 class Test
 {
-    private $id;
+    private $identity;
     private $valeur1;
     private $valeur2;
 
     public function getId()
     {
-        return $this->id;
+        return $this->identity;
     }
 
-    public function setId($ident)
+    public function setId($identity)
     {
-        $this->id = $ident;
+        $this->identity = $identity;
     }
 
     public function getValeur1()

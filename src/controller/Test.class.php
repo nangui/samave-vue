@@ -59,59 +59,62 @@
             //Instanciation du model
             $tdb = new TestDB();
             //Récupération des données qui viennent du formulaire view/test/add.html (à créer)
-            if (isset(filter_input(INPUT_POST, 'valider'))) {//'valider' est le name du champs submit du formulaire add.html
-                extract(filter_input_array(INPUT_POST));
+            $filter = filter_input(INPUT_POST, 'valider');
+            if (isset($filter)) {//'valider' est le name du champs submit du formulaire add.html
+                $post = filter_input_array(INPUT_POST);
+                extract($post);
                 $data['ok'] = 0;
                 if (!empty($valeur1) && !empty($valeur2)) {
                     $testObject = new TestEntity();
                     $testObject->setValeur1($valeur1);
                     $testObject->setValeur2($valeur2);
 
-                    $ok = $tdb->addTest($testObject);
-                    $data['ok'] = $ok;
+                    $okay = $tdb->addTest($testObject);
+                    $data['ok'] = $okay;
                 }
 
                 return $this->view->load('test/add', $data);
-            } else {
-                return $this->view->load('test/add');
             }
+            return $this->view->load('test/add');
         }
 
         public function update()
         {
             //Instanciation du model
             $tdb = new TestDB();
-            if (isset(filter_input(INPUT_POST, 'modifier'))) {
-                extract($_POST);
-                if (!empty($id) && !empty($valeur1) && !empty($valeur2)) {
+            $filter = filter_input(INPUT_POST, 'modifier');
+            if (isset($filter)) {
+                $post = filter_input_array(INPUT_POST);
+                extract($post);
+                if (!empty($identity) && !empty($valeur1) && !empty($valeur2)) {
                     $testObject = new TestEntity();
-                    $testObject->setId($id);
+                    $testObject->setId($identity);
                     $testObject->setValeur1($valeur1);
                     $testObject->setValeur2($valeur2);
-                    $ok = $tdb->updateTest($testObject);
+                    $okay = $tdb->updateTest($testObject);
                 }
             }
 
             return $this->liste(); //appel de la methode liste du controller
         }
 
-        public function delete($ident)
+        public function delete($identity)
         {
             //Instanciation du model
             $tdb = new TestDB();
             //Supression
-            $tdb->deleteTest($ident);
+            $tdb->deleteTest($identity);
             //Retour vers la liste
             return $this->liste();
         }
 
-        public function edit($ident)
+        public function edit($identity)
         {
 
             //Instanciation du model
             $tdb = new TestDB();
             //Supression
-            $data['test'] = $tdb->getTest($ident);
+            $data['test'] = $tdb->getTest($identity);
             //chargement de la vue edit.html
             return $this->view->load('test/edit', $data);
         }
