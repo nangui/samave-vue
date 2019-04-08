@@ -2,6 +2,8 @@
 
 ## Samane MVC version 1.5
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0a1ff6b3dc164a09b9ee6f8d15ce00e3)](https://app.codacy.com/app/nangui/samave-vue?utm_source=github.com&utm_medium=referral&utm_content=nangui/samave-vue&utm_campaign=Badge_Grade_Dashboard)
+
 ## SamaneMVC Vuejs Ready to uses
 
 In this depot I put a version of samanemvc with viewjs ready to use, to do this, I used [laravel-mix](https://laravel-mix.com/).
